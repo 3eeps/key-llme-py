@@ -1,7 +1,7 @@
 # key-llme-py
 stable-diffusion text interface
 
-oh boy the dependances
+oh boy the dependances\n
 python 3.11+
 
 for cuda:
