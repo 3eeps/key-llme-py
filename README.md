@@ -7,8 +7,5 @@ python 3.11+
 
 for cuda:
 
-pip install typing-extentions
+pip3 install typing-extentions diffusers torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
-
-pip install diffusers
