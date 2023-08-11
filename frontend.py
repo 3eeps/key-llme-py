@@ -3,7 +3,7 @@ import torch
 from datetime import datetime
 from diffusers import DiffusionPipeline
 
-def main(model_base=str):
+def main():
     timestamp = datetime.now()
     file_name = timestamp.strftime("%d-%m-%Y-%H-%M-%S")
 
