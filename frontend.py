@@ -16,7 +16,7 @@ def main():
     while True:
         prompt = input("key-llme-py>>> ")
 
-        _image = pipeline(prompt, width=1920, height=1080).images[0]
+        _image = pipeline(prompt).images[0]
         _image.save(f"{output_file_name}.png")
 
 if __name__ == "__main__":
