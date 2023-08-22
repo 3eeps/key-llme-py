@@ -22,15 +22,16 @@ def main():
             lora_list.append(obj.name)
     file_list.close()
     lora_num = int(input("#>>> "))
-    lora_to_load = lora_list[lora_num]
+    lora_to_load = lora_list[lora_num - 1]
+    print(f"sdxl 1.0 + {lora_to_load}")
 
     pipeline = DiffusionPipeline.from_pretrained(pretrained_model_name_or_path=model_path, torch_dtype=torch.float16)
     pipeline.enable_model_cpu_offload()
-    pipeline.load_lora_weights(pretrained_model_name_or_path_or_dict=lora_to_load, weight_name=lora_to_load)
+    pipeline.load_lora_weights(pretrained_model_name_or_path_or_dict=lora_path, weight_name=lora_to_load)
 
     while True:
         user_prompt = input("%>>> ")
-
+        
         _image = pipeline(prompt=user_prompt).images[0]
         _image.save(f"{output_file_name}.png")
 
