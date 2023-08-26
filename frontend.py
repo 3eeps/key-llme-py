@@ -10,8 +10,7 @@ def main():
     lora_list = []
     file_list = os.scandir(lora_path)
     
-    print(model_path)
-    print(lora_path)
+    print(model_path, "\n", lora_path)
     list_num = 0
     for obj in file_list:
         list_num = list_num + 1
@@ -33,9 +32,9 @@ def main():
     while True:
         user_prompt = input(">>> ") 
 
-        output_file_name = datetime.now().strftime("%d-%m-%Y-%H-%M-%S")
-        _image = pipeline(prompt=user_prompt).images[0]      
+        _image = pipeline(prompt=user_prompt).images[0]
+        output_file_name = datetime.now().strftime("%d-%m-%Y-%H-%M-%S")      
         _image.save(f"{output_file_name}.png")
 
 if __name__ == "__main__":
-    main() 
+    main()
