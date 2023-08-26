@@ -24,7 +24,7 @@ def main():
 
     lora_num = int(input(">>> "))
     lora_to_load = lora_list[lora_num - 1]
-    print(f"loading sdxl 1.0 + {lora_to_load}")
+    print(f"loading sdxl 1.0 + {lora_to_load}:")
 
     pipeline = DiffusionPipeline.from_pretrained(pretrained_model_name_or_path=model_path, torch_dtype=torch.float16)
     pipeline.enable_model_cpu_offload()
@@ -33,9 +33,9 @@ def main():
     while True:
         user_prompt = input(">>> ") 
 
-        output_file_name = datetime.now().strftime("%D-%M-%Y-%H-%M-%S")
+        output_file_name = datetime.now().strftime("%d-%m-%Y-%H-%M-%S")
         _image = pipeline(prompt=user_prompt).images[0]      
         _image.save(f"{output_file_name}.png")
 
 if __name__ == "__main__":
-    main()
+    main() 
