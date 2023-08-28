@@ -37,4 +37,4 @@ def main():
         _image.save(f"{output_file_name}.png")
 
 if __name__ == "__main__":
-    main()
+    main() 
