@@ -15,9 +15,7 @@ def main():
     for obj in file_list:
         list_num = list_num + 1
         if obj.is_file():
-            file_name = lora_path + "/" + obj.name
-            file_stats = os.stat(file_name)
-            print(f"{list_num}.) {obj.name} - {int(file_stats.st_size / 1048576)}mb")
+            print(f"{list_num}.) {obj.name}")
             lora_list.append(obj.name)
     file_list.close()
 
@@ -31,7 +29,6 @@ def main():
 
     while True:
         user_prompt = input(">>> ") 
-
         _image = pipeline(prompt=user_prompt).images[0]
         output_file_name = datetime.now().strftime("%d-%m-%Y-%H-%M-%S")      
         _image.save(f"{output_file_name}.png")
