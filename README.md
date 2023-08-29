@@ -1,4 +1,4 @@
-# key-llme-py
+# key-llme-🥧
 stable-diffusion text interface
 
 oh boy the dependances, nvidia gpu required
